@@ -1,0 +1,108 @@
+@import "src/styles/base";
+@import "src/styles/bootstrap";
+
+.cp-sidebar {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    padding-bottom: 10px;
+    background: $bg-color-lighter;
+    overflow: hidden;
+
+    @include media-breakpoint-up(md) {
+        position: fixed;
+        height: 100%;
+        width: 350px;
+    }
+}
+.cp-sidebar-searchbar {
+    position: fixed;
+    width: 100%;
+    padding: 20px;
+    height: 80px;
+    background: $bg-color-lighter;
+    box-shadow: -3px 1px 8px rgb(0 0 0 / 50%);
+
+    @include media-breakpoint-up(md) {
+        width: 350px;
+    }
+
+    input {
+        width: 100%;
+        min-height: 40px;
+        color: $text-color;
+        background: $bg-color-darker;
+        padding: 0 10px;
+        border: none;
+        border-radius: 4px;
+        box-shadow: none;
+        outline: none;
+
+        &::placeholder {
+            color: $searchbar-input-text-color;
+        }
+    }
+}
+.cp-sidebar-inner {
+    margin-top: 100px;
+    max-height: calc(100vh - 100px);
+    overflow-y: auto;
+}
+.cp-crypto-item {
+    cursor: pointer;
+    display: flex;
+    padding: 8px 5px;
+    margin: 0 10px;
+    transition: 0.15s ease-in-out;
+
+    &:hover,
+    &.active {
+        background: rgb(79 0 11 / 20%);
+    }
+
+    &:not(:last-child) {
+        border-bottom: 1px solid $bg-color-darker;
+    }
+    .cp-crypto-details {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex: 1;
+    }
+    .cp-crypto-image {
+        width: 25px;
+        height: 25px;
+        margin-right: 10px;
+
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: 50%;
+        }
+    }
+    .cp-crypto-name {
+        font-weight: 600;
+        color: $text-color;
+    }
+    .cp-crypto-price-wrapper {
+        text-align: right;
+    }
+    .cp-crypto-price {
+        font-weight: 600;
+        color: $text-color;
+    }
+    .cp-crypto-symbol {
+        color: $coin-text-color;
+    }
+    .cp-crypto-change {
+        font-size: 14px;
+
+        &.negative {
+            color: $price-color-negative;
+        }
+
+        &.positive {
+            color: $price-color-positive;
+        }
+    }
+}

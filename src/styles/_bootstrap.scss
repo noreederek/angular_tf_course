@@ -1,0 +1,9 @@
+$body-bg: $bg-color;
+
+$body-color: $text-color;
+
+$font-family-base: $font-opensans;
+
+
+/* Importing Bootstrap SCSS file. */
+@import "~bootstrap/scss/bootstrap";

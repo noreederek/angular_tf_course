@@ -1,0 +1,19 @@
+<div class="cp-chart-wrapper">
+  <div class="cp-chart-date-wrapper">
+    <div
+      class="cp-chart-date"
+      *ngFor="let timeline of cryptoTimelines"
+      (click)="updateTimeline(timeline)"
+      [ngClass]="currentCryptoTimeline === timeline ? 'active' : ''"
+    >
+      {{ timeline }}
+    </div>
+  </div>
+  <div
+    echarts
+    [options]="chartOption"
+    [merge]="mergeOptions"
+    [theme]="'default'"
+    class="crypto-chart"
+  ></div>
+</div>
