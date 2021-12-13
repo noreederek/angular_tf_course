@@ -1,21 +1,27 @@
 <main class="crypto-main">
   <!-- <app-header></app-header> -->
     <div *ngIf="isLoggedin === false">
-      <h2 class="text-center mb-5">Angular Login with Google</h2>
-      <div>
-        <button type="button" (click)="loginWithGoogle()" class="btn btn-danger">Login with Google</button>
+      <div class="login-screen-cover">
+        
+        <div class="login-screen-text-box">
+          <h1 class="login-screen-heading-primary">
+            <span class="login-screen-heading-primary-main">Angular Coursework</span>
+            <span class="login-screen-heading-primary-sub">Cryptocurrency Charts</span>
+          </h1>
+          <a type="button" (click)="loginWithGoogle()"  class="btn btn-light btn-animated">Login with Google</a>
+        </div>
       </div>
     </div>
   
     <div *ngIf="isLoggedin === true">
-      <div class="cp-user-info-header">
-        <div>
+      <div class="user-info-header">
+        <a class="user-info-logo">Cryptocurrency Charts</a>
+        <div class="user-info-header-right">
+          <a type="button" (click)="logOut()">Logout</a>
           <input type="text" [value]="socialUser.firstName" id="firstname" readonly>
           <input type="text" [value]="socialUser.lastName" id="lastname" readonly>
           <input type="text" [value]="socialUser.email" id="email" readonly>
         </div>
-      
-        <button type="button" (click)="logOut()" class="btn btn-danger">Log Out</button>
       </div>
       <div class="cp-content-wrapper">
         <app-sidebar class="cp-sidebar"></app-sidebar>
