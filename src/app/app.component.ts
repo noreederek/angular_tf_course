@@ -11,7 +11,7 @@ import { SocialAuthService, GoogleLoginProvider, SocialUser } from 'angularx-soc
 export class AppComponent implements OnInit {
   loginForm: FormGroup;
   socialUser: SocialUser;
-  isLoggedin: boolean;  
+  isLoggedin: boolean = false;  
   
   constructor(
     private formBuilder: FormBuilder, 
