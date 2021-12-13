@@ -1,7 +1,33 @@
 <main class="crypto-main">
   <!-- <app-header></app-header> -->
   <div class="cp-content-wrapper">
-    <app-sidebar class="cp-sidebar"></app-sidebar>
-    <app-chart class="cp-content"></app-chart>
+    <div *ngIf="isLoggedin === false">
+      <h2 class="text-center mb-5">Angular Login with Google</h2>
+      <div>
+        <button type="button" (click)="loginWithGoogle()" class="btn btn-danger">Login with Google</button>
+      </div>
+    </div>
+  
+    <div *ngIf="isLoggedin === true">
+      <div class="cp-user-info-header">
+        <div class="form-group">
+          <label>First Name</label>
+          <input type="text" class="form-control" [value]="socialUser.firstName" id="firstname" readonly>
+        </div>
+        <div class="form-group">
+          <label>Last Name</label>
+          <input type="text" class="form-control" [value]="socialUser.lastName" id="lastname" readonly>
+        </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input type="text" class="form-control" [value]="socialUser.email" id="email" readonly>
+        </div>
+      
+        <button type="button" (click)="logOut()" class="btn btn-primary">Log Out</button>
+      </div>
+
+      <app-sidebar class="cp-sidebar"></app-sidebar>
+      <app-chart class="cp-content"></app-chart>
+    </div>
   </div>
 </main>
