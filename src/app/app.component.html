@@ -16,8 +16,8 @@
     <div *ngIf="isLoggedin === true">
       <div class="user-info-header">
         <a class="user-info-logo">Cryptocurrency Charts</a>
+        <a type="button" (click)="logOut()">Logout</a>
         <div class="user-info-header-right">
-          <a type="button" (click)="logOut()">Logout</a>
           <input type="text" [value]="socialUser.firstName" id="firstname" readonly>
           <input type="text" [value]="socialUser.lastName" id="lastname" readonly>
           <input type="text" [value]="socialUser.email" id="email" readonly>
