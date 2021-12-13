@@ -47,4 +47,5 @@ import { NgxEchartsModule } from 'ngx-echarts';
   ],
   bootstrap: [AppComponent],
 })
+
 export class AppModule {}

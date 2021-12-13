@@ -1,11 +1,15 @@
 <main class="crypto-main">
   <!-- <app-header></app-header> -->
-    <div *ngIf="isLoggedin === false">
+    <h2 class="text-center mb-5">Angular Login with Google</h2>
+    <div>
+      <button type="button" (click)="loginWithGoogle()" class="btn btn-danger">Login with Google</button>
+    </div>
+    <!-- <div *ngIf="isLoggedin === false">
       <h2 class="text-center mb-5">Angular Login with Google</h2>
       <div>
         <button type="button" (click)="loginWithGoogle()" class="btn btn-danger">Login with Google</button>
       </div>
-    </div>
+    </div> -->
   
     <div *ngIf="isLoggedin === true">
       <div class="cp-user-info-header">
